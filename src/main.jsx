@@ -13,6 +13,7 @@ import Contato from "./pages/client/contato";
 import Login from "./pages/admin/login";
 import ProjetosAdmin from "./pages/admin/projetos";
 import CertificadosAdmin from "./pages/admin/certificados";
+import Curriculo from "./pages/admin/curriculo";
 import Experiencias from "./pages/admin/experiencias";
 import Conhecimentos from "./pages/admin/conhecimentos";
 
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
       {index: true, element: <Login />},
       {path: "projetos", element: <ProjetosAdmin />},
       {path: "certificados", element: <CertificadosAdmin />},
+      {path: "curriculo", element: <Curriculo />},
       {path: "experiencias", element: <Experiencias />},
       {path: "conhecimentos", element: <Conhecimentos />}
     ]
