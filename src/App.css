@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+/* Animação: entra da esquerda */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animação: cresce na tela */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Classes utilitárias */
+.animate-slide-in-left {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.7s ease-out forwards;
+}
+
+/* Estado inicial antes de animar (elemento invisível) */
+.animate-hidden {
+  opacity: 0;
+}

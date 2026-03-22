@@ -5,8 +5,7 @@ export default function ClientRoutes() {
   return (
     <>
       <Navbar />
-      <h1>Cliente</h1>
-      <Outlet/>
+      <Outlet />
     </>
   );
 }
