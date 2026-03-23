@@ -9,7 +9,7 @@ export default function Inicio() {
   return (
     <>
       <section className="px-6 md:px-10 min-h-screen bg-mist-200 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0 pt-24 pb-10 md:pt-0 md:pb-0">
-        <div className="w-full md:w-[75%] flex flex-col gap-4 text-left">
+        <div className="w-full md:w-[75%] flex flex-col gap-4 text-left animate-fade-in-left">
           <h5 className="flex items-center gap-2 font-semibold text-amber-400">
             <FaRegDotCircle /> OLÁ, EU SOU
           </h5>
@@ -30,7 +30,7 @@ export default function Inicio() {
             <Links text="Ver Projetos" icon={<IoIosArrowRoundForward />} to="/projetos" />
           </span>
         </div>
-        <div className="w-full flex justify-center">
+        <div className="w-full flex justify-center animate-zoom-in">
           <img
             src="/Rafael.jpeg"
             alt="Rafael Porto Annunciato"
