@@ -12,7 +12,28 @@ import useInView from "../../hooks/useInView";
 export default function Inicio() {
   const { ref: refConhecimentos, inView: inViewConhecimentos } = useInView();
   const { ref: refExperiencias, inView: inViewExperiencias } = useInView();
+
   const skills = ["Python", "Java", "TypeScript", "JavaScript", "React", "Node.js", "Flask", "Spring Boot", "PostgreSQL", "MongoDB", "Docker", "Git", "HTML/CSS", "Tailwind CSS", "Rest APIs", "IA/ML"];
+  const experiencias = [
+    {
+      data_inicio: "2025-03-14",
+      data_fim: null,
+      emprego_atual: true,
+      cargo: "Desenvolvedor Full Stack",
+      empresa: "Tech Solutions LTDA",
+      descricao: "Atuação em projetos de desenvolvimento de software, com foco em tecnologias web e mobile. Participação em reuniões de equipe e colaboração com outros departamentos para garantir a entrega de soluções de alta qualidade.",
+      tecnologias: ["React", "Node.js", "TypeScript", "PostgreSQL"]
+    },
+    {
+      data_inicio: "2025-03-06",
+      data_fim: "2026-03-17",
+      emprego_atual: false,
+      cargo: "Estagiário de Desenvolvimento de Software",
+      empresa: "AIDDA Technology Group",
+      descricao: "Atuação em projetos de desenvolvimento de software, com foco em tecnologias web e mobile. Participação em reuniões de equipe e colaboração com outros departamentos para garantir a entrega de soluções de alta qualidade.",
+      tecnologias: ["Python", "Flask", "SQL", "Angular"]
+    }
+  ];
 
   return (
     <>
@@ -56,9 +77,10 @@ export default function Inicio() {
       </section>
       <section className="bg-mist-100 flex flex-col items-center justify-center gap-10 py-16">
         <h2 ref={refExperiencias} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewExperiencias ? "animate-fade-in-up" : "opacity-0"}`}>Experiências</h2>
-        <ul className="w-[50%] flex flex-col gap-8">
-          <ExperienciasCard />
-          <ExperienciasCard />
+        <ul className="flex flex-col gap-8 w-[75%] md:w-[50%]">
+          {experiencias.map((experiencia, index) => (
+            <ExperienciasCard key={index} experiencia={experiencia} />
+          ))}
         </ul>
       </section>
     </>
