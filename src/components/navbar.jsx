@@ -95,26 +95,12 @@ export default function Navbar({ admin }) {
       </div>
       {isVisible && (
         <div
-          className={`
-            md:hidden absolute top-16 left-0 w-full h-screen bg-mist-50 shadow-md z-50
-            flex flex-col px-4 gap-1
-            transition-all duration-[400ms] ease-in-out
-            ${openMenu
-              ? "opacity-100 translate-y-0"       // estado aberto
-              : "opacity-0 -translate-y-4"         // estado fechado (animação de saída)
-            }
-          `}
-        >
+          className={`md:hidden absolute top-16 left-0 w-full h-screen bg-mist-50 shadow-md z-50 flex flex-col px-4 gap-1 transition-all duration-[400ms] ease-in-out ${openMenu ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
           {navLinks.map((link, index) => (
             <Link key={index} to={link.path} onClick={handleClose}>
               <span
-                className={`
-                  flex items-center gap-2 py-3 border-b border-mist-200
-                  text-mist-500 hover:text-amber-400 transition-colors
-                  transition-all duration-[400ms] ease-in-out
-                  ${openMenu ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}
-                `}
-                style={{ transitionDelay: `${index * 60}ms` }} // cada link entra com delay escalonado
+                className={`flex items-center gap-2 py-3 border-b border-mist-200 text-mist-500 hover:text-amber-400 transition-colors transition-all duration-[400ms] ease-in-out ${openMenu ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
+                style={{ transitionDelay: `${index * 60}ms` }}
               >
                 {link.icon}
                 {link.name}

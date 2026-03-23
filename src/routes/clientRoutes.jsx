@@ -5,7 +5,9 @@ export default function ClientRoutes() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <main className="font-mono">
+        <Outlet/>
+      </main>
     </>
   );
 }
