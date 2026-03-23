@@ -5,11 +5,13 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import Buttons from "../../components/buttons";
 import Links from "../../components/links";
 import Skill from "../../components/skill";
+import ExperienciasCard from "../../components/experienciasCard";
 
 import useInView from "../../hooks/useInView";
 
 export default function Inicio() {
-  const { ref, inView } = useInView();
+  const { ref: refConhecimentos, inView: inViewConhecimentos } = useInView();
+  const { ref: refExperiencias, inView: inViewExperiencias } = useInView();
   const skills = ["Python", "Java", "TypeScript", "JavaScript", "React", "Node.js", "Flask", "Spring Boot", "PostgreSQL", "MongoDB", "Docker", "Git", "HTML/CSS", "Tailwind CSS", "Rest APIs", "IA/ML"];
 
   return (
@@ -45,14 +47,20 @@ export default function Inicio() {
         </div>
       </section>
       <section className="bg-mist-50 flex flex-col items-center justify-center gap-10 py-16">
-        <h2 ref={ref} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold animate-fade-in-up ${inView ? "animate-zoom-in" : "opacity-0"}`}>Conhecimentos</h2>
+        <h2 ref={refConhecimentos} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewConhecimentos ? "animate-fade-in-up" : "opacity-0"}`}>Conhecimentos</h2>
         <ul className="w-[75%] flex justify-center flex-wrap gap-4 md:w-[50%]">
           {skills.map((skill, index) => (
             <Skill key={index} skill={skill} delay={index * 50} />
           ))}
         </ul>
       </section>
-      <section className="bg-mist-200"></section>
+      <section className="bg-mist-100 flex flex-col items-center justify-center gap-10 py-16">
+        <h2 ref={refExperiencias} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewExperiencias ? "animate-fade-in-up" : "opacity-0"}`}>Experiências</h2>
+        <ul className="w-[50%] flex flex-col gap-8">
+          <ExperienciasCard />
+          <ExperienciasCard />
+        </ul>
+      </section>
     </>
   );
 }
