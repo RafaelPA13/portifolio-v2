@@ -47,10 +47,10 @@ export default function Projetos() {
   const projetosFiltrados = filtroAtivo === "Todos" ? projetos : projetos.filter(projeto => projeto.tecnologias.some(tech => tech.nome === filtroAtivo));
 
   return (
-    <div className="py-32 bg-mist-100 min-h-screen flex flex-col items-center gap-10">
+    <div className="py-32 bg-slate-100 min-h-screen flex flex-col items-center gap-10">
       <div className="text-center animate-fade-in-up">
         <h1 className="text-3xl font-semibold mb-3">Projetos</h1>
-        <h2 className="text-xl text-gray-600">
+        <h2 className="text-lg text-slate-600">
           Conheça alguns dos meus trabalhos
         </h2>
       </div>

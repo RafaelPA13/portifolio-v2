@@ -5,7 +5,7 @@ export default function Links({ text, icon, to, blank, iconLeft }) {
     <Link
       to={to}
       target={blank ? "_blank" : "_self"}
-      className="px-4 py-2 bg-mist-50 border-2 border-mist-300 flex items-center gap-2 rounded-md transition-colors duration-300 hover:cursor-pointer hover:bg-amber-400"
+      className="px-4 py-2 bg-slate-50 border-2 border-slate-300 flex items-center gap-2 rounded-md transition-colors duration-300 hover:cursor-pointer hover:bg-amber-400"
     >
       {icon ? (
         iconLeft ? (

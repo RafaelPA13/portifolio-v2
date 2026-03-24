@@ -54,7 +54,7 @@ export default function Navbar({ admin }) {
   const navLinks = admin ? adminLinks : clientLinks;
 
   return (
-    <header className="bg-mist-50 z-50 fixed top-0 left-0 w-full border-b border-mist-200">
+    <header className="bg-slate-50 z-50 fixed top-0 left-0 w-full border-b border-slate-200">
       <div className="h-16 flex items-center justify-between px-4">
         <span className="flex items-center gap-1 font-semibold text-lg">
           {admin && <LuLayoutDashboard className="text-amber-400" />}
@@ -65,7 +65,7 @@ export default function Navbar({ admin }) {
         <nav className={`hidden md:flex ${admin ? "w-[45%]" : "w-[25%]"} justify-between`}>
           {navLinks.map((link, index) => (
             <Link key={index} to={link.path}>
-              <span className="flex items-center gap-1 text-mist-500 hover:text-amber-400 transition-colors">
+              <span className="flex items-center gap-1 font-medium text-slate-500 hover:text-amber-400 transition-colors">
                 {link.icon}
                 {link.name}
               </span>
@@ -78,7 +78,7 @@ export default function Navbar({ admin }) {
               <RxExit /> Sair
             </button>
           ) : (
-            <ul className="flex gap-4 text-lg text-mist-500">
+            <ul className="flex gap-4 text-lg font-medium text-slate-500">
               <a className="hover:text-amber-400 transition-colors" href="https://github.com/RafaelPA13" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
               <a className="hover:text-amber-400 transition-colors" href="https://www.linkedin.com/in/rafael-porto-annunciato-751512265" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
               <a className="hover:text-amber-400 transition-colors" href="https://www.instagram.com/rafaportann__/" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
@@ -86,7 +86,7 @@ export default function Navbar({ admin }) {
           )}
         </div>
         <button
-          className="md:hidden text-2xl text-mist-500 hover:text-amber-400 transition-colors"
+          className="md:hidden text-2xl text-slate-500 hover:text-amber-400 transition-colors"
           onClick={toggleMenu}
           aria-label="Abrir menu"
         >
@@ -95,11 +95,11 @@ export default function Navbar({ admin }) {
       </div>
       {isVisible && (
         <div
-          className={`md:hidden absolute top-16 left-0 w-full h-screen bg-mist-50 shadow-md z-50 flex flex-col px-4 gap-1 transition-all duration-[400ms] ease-in-out ${openMenu ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
+          className={`md:hidden absolute top-16 left-0 w-full h-screen bg-slate-50 shadow-md z-50 flex flex-col px-4 gap-1 transition-all duration-[400ms] ease-in-out ${openMenu ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}`}>
           {navLinks.map((link, index) => (
             <Link key={index} to={link.path} onClick={handleClose}>
               <span
-                className={`flex items-center gap-2 py-3 border-b border-mist-200 text-mist-500 hover:text-amber-400 transition-colors transition-all duration-[400ms] ease-in-out ${openMenu ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
+                className={`flex items-center gap-2 py-3 border-b border-slate-200 text-slate-500 hover:text-amber-400 transition-colors transition-all duration-[400ms] ease-in-out ${openMenu ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`}
                 style={{ transitionDelay: `${index * 60}ms` }}
               >
                 {link.icon}
@@ -115,7 +115,7 @@ export default function Navbar({ admin }) {
               <RxExit /> Sair
             </button>
           ) : (
-            <div className="flex gap-5 mt-3 text-xl text-mist-500">
+            <div className="flex gap-5 mt-3 text-xl text-slate-500">
               <a className="hover:text-amber-400 transition-colors" href="https://github.com/RafaelPA13" target="_blank" rel="noopener noreferrer"><FiGithub /></a>
               <a className="hover:text-amber-400 transition-colors" href="https://www.linkedin.com/in/rafael-porto-annunciato-751512265" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
               <a className="hover:text-amber-400 transition-colors" href="https://www.instagram.com/rafaportann__/" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>

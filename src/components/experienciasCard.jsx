@@ -12,7 +12,7 @@ export default function ExperienciasCard({ experiencia }) {
             <h5 className="font-semibold text-amber-400">{experiencia.data_inicio} - {experiencia.data_fim ? experiencia.data_fim : "Atual"}</h5>
             <h3 className="font-bold text-xl">{experiencia.cargo}</h3>
             <h4 className="font-medium text-lg text-indigo-950">{experiencia.empresa}</h4>
-            <p className="text-base text-mist-500">{experiencia.descricao}</p>
+            <p className="text-base text-slate-500">{experiencia.descricao}</p>
             <ul className="flex flex-wrap gap-3">
                 {experiencia.tecnologias.map((tecnologia, index) => (
                     <Skill key={index} skill={tecnologia} animated={false} inicio={false} card={true} />

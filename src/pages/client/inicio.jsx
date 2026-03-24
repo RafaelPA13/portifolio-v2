@@ -37,7 +37,7 @@ export default function Inicio() {
 
   return (
     <>
-      <section className="px-6 md:px-10 min-h-screen bg-mist-200 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0 pt-24 pb-10 md:pt-0 md:pb-0">
+      <section className="px-6 md:px-10 min-h-screen bg-slate-100 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0 pt-24 pb-10 md:pt-0 md:pb-0">
         <div className="w-full md:w-[75%] flex flex-col gap-4 text-left animate-fade-in-left">
           <h5 className="flex items-center gap-2 font-semibold text-amber-400">
             <FaRegDotCircle /> OLÁ, EU SOU
@@ -48,7 +48,7 @@ export default function Inicio() {
           <h2 className="text-2xl md:text-3xl font-medium text-indigo-950">
             Engenheiro de Software
           </h2>
-          <p className="text-base md:text-xl text-mist-500">
+          <p className="text-base md:text-xl text-slate-500">
             Sou um desenvolvedor apaixonado por tecnologia e inovação. Com
             experiência em desenvolvimento full stack, busco criar soluções
             elegantes e eficientes para problemas complexos. Estou sempre em
@@ -63,11 +63,11 @@ export default function Inicio() {
           <img
             src="/Rafael.jpeg"
             alt="Rafael Porto Annunciato"
-            className="size-48 sm:size-64 md:size-96 rounded-full border-8 border-amber-400"
+            className="size-48 sm:size-64 md:size-96 rounded-full border-4 border-amber-400"
           />
         </div>
       </section>
-      <section className="bg-mist-50 flex flex-col items-center justify-center gap-10 py-16">
+      <section className="bg-slate-50 flex flex-col items-center justify-center gap-10 py-16">
         <h2 ref={refConhecimentos} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewConhecimentos ? "animate-fade-in-up" : "opacity-0"}`}>Conhecimentos</h2>
         <ul className="w-[75%] flex justify-center flex-wrap gap-4 md:w-[50%]">
           {skills.map((skill, index) => (
@@ -75,7 +75,7 @@ export default function Inicio() {
           ))}
         </ul>
       </section>
-      <section className="bg-mist-100 flex flex-col items-center justify-center gap-10 py-16">
+      <section className="bg-slate-100 flex flex-col items-center justify-center gap-10 py-16">
         <h2 ref={refExperiencias} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewExperiencias ? "animate-fade-in-up" : "opacity-0"}`}>Experiências</h2>
         <ul className="flex flex-col gap-8 w-[75%] md:w-[50%]">
           {experiencias.map((experiencia, index) => (
