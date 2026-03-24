@@ -20,27 +20,27 @@ export default function Projetos() {
       ]
     },
     {
-      id: 1,
-      nome: "Sistema de Gestão Empresarial",
-      resumo: "Sistema completo para gestão de empresas com dashboard interativo.",
+      id: 2,
+      nome: "App de Delivery",
+      resumo: "Aplicativo de delivery com rastreamento em tempo real.",
       imagem: null,
       tecnologias: [
         { id: 1, nome: "React" },
-        { id: 2, nome: "TypeScript" },
-        { id: 3, nome: "Node.js" },
-        { id: 4, nome: "PostgreSQL" },
+        { id: 5, nome: "Python" },
+        { id: 6, nome: "Flask" },
+        { id: 7, nome: "MongoDB" },
       ]
     },
     {
-      id: 1,
-      nome: "Sistema de Gestão Empresarial",
-      resumo: "Sistema completo para gestão de empresas com dashboard interativo.",
+      id: 3,
+      nome: "Chatbot com IA",
+      resumo: "Chatbot inteligente usando processamento de linguagem natural.",
       imagem: null,
       tecnologias: [
-        { id: 1, nome: "React" },
-        { id: 2, nome: "TypeScript" },
-        { id: 3, nome: "Node.js" },
-        { id: 4, nome: "PostgreSQL" },
+        { id: 5, nome: "Python" },
+        { id: 8, nome: "IA" },
+        { id: 9, nome: "NLP" },
+        { id: 10, nome: "FastAPI" },
       ]
     },
   ];
@@ -50,7 +50,7 @@ export default function Projetos() {
     <div className="py-32 bg-slate-100 min-h-screen flex flex-col items-center gap-10">
       <div className="text-center animate-fade-in-up">
         <h1 className="text-3xl font-semibold mb-3">Projetos</h1>
-        <h2 className="text-lg text-slate-600">
+        <h2 className="text-lg text-slate-500">
           Conheça alguns dos meus trabalhos
         </h2>
       </div>

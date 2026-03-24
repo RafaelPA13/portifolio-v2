@@ -6,7 +6,9 @@ import "./App.css";
 // Páginas de cliente
 import Inicio from "./pages/client/inicio";
 import Projetos from "./pages/client/projetos";
+import DetalhesProjeto from "./pages/client/detalhesProjeto";
 import Certificados from "./pages/client/certificados";
+import DetalhesCertificado from "./pages/client/detalhesCertificado";
 import Contato from "./pages/client/contato";
 
 // Páginas de admin
@@ -28,7 +30,9 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <Inicio />},
       {path: "projetos", element: <Projetos />},
+      {path: "projetos/:id", element:<DetalhesProjeto />},
       {path: "certificados", element: <Certificados />},
+      {path: "certificados/:id", element: <DetalhesCertificado />},
       {path: "contato", element: <Contato />}
     ]
   },

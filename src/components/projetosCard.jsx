@@ -4,7 +4,7 @@ import Skill from "./skill"
 export default function ProjetosCard({ projeto, delay = 0 }) {
     return (
         <Link 
-            to={""} 
+            to={"/projetos/" + projeto.id} 
             style={{ animationDelay: `${delay}ms`, animationFillMode: "backwards" }}
             className="group rounded-lg bg-slate-50 border border-slate-300 overflow-hidden flex flex-col gap-3 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up"
         >
