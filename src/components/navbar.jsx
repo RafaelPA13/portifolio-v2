@@ -54,7 +54,7 @@ export default function Navbar({ admin }) {
   const navLinks = admin ? adminLinks : clientLinks;
 
   return (
-    <header className="bg-mist-50 z-50 fixed top-0 left-0 w-full shadow-md">
+    <header className="bg-mist-50 z-50 fixed top-0 left-0 w-full border-b border-mist-200">
       <div className="h-16 flex items-center justify-between px-4">
         <span className="flex items-center gap-1 font-semibold text-lg">
           {admin && <LuLayoutDashboard className="text-amber-400" />}
