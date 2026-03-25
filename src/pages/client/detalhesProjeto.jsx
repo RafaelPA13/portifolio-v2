@@ -68,8 +68,8 @@ export default function DetalhesProjeto() {
 
   return (
     <div className="py-32 bg-slate-100 min-h-screen">
-      <div className="w-[50%] flex flex-col gap-10 mx-auto">
-        <Link to="/projetos" className="text-slate-500 flex items-center gap-2">
+      <div className="flex flex-col gap-10 mx-auto w-[75%] md:w-[50%]">
+        <Link to="/projetos" className="text-slate-500 flex items-center gap-2 transition-colors hover:text-amber-400">
           <IoArrowBack />
           Voltar
         </Link>
@@ -89,7 +89,7 @@ export default function DetalhesProjeto() {
             <Skill key={tecnologia.id} skill={tecnologia.nome} animated={false} inicio={false} card={true}/>
           ))}
         </ul>
-        <span className="flex items-center gap-3">
+        <span className="flex items-center flex-wrap gap-3">
           {projeto.repositorios.map((repo, index) => (
             <Links key={index} text={`GitHub ${repo.tipo == "único" ? "" : repo.tipo}`} to={repo.link} iconLeft={true} icon={<FiGithub/>} blank={true}/>
           ))}
