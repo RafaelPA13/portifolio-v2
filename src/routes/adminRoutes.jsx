@@ -5,7 +5,9 @@ export default function AdminRoutes() {
   return (
     <>
       <Navbar admin={true} />
-      <Outlet />
+      <main className="pt-16">
+        <Outlet />
+      </main>
     </>
   );
 }

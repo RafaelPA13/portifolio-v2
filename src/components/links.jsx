@@ -9,11 +9,11 @@ export default function Links({ text, icon, to, blank, iconLeft, amarelo = false
     >
       {icon ? (
         iconLeft ? (
-          <span className="flex items-center gap-2">
+          <span className="flex items-center justify-center gap-2">
             {icon} {text}
           </span>
         ) : (
-          <span className="flex items-center gap-2">
+          <span className="flex items-center justify-center gap-2">
             {text} {icon}
           </span>
         )

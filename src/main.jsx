@@ -20,7 +20,7 @@ import Conhecimentos from "./pages/admin/conhecimentos";
 
 // Rotas
 import ClientRoutes from "./routes/clientRoutes";
-import AdminRoutes from "./routes/AdminRoutes";
+import AdminRoutes from "./routes/adminRoutes";
 
 const router = createBrowserRouter([
   {
@@ -35,10 +35,13 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/admin/",
+    path: "/admin", 
+    element: <Login />
+  },
+  {
+    path: "/admin",
     element: <AdminRoutes />,
     children: [
-      {index: true, element: <Login />},
       {path: "projetos", element: <ProjetosAdmin />},
       {path: "certificados", element: <CertificadosAdmin />},
       {path: "curriculo", element: <Curriculo />},
