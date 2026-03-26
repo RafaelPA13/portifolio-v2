@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import Filtro from "../../components/Filtro";
+import Titulo from "../../components/titulo";
+import Filtro from "../../components/filtro";
 import CertificadoCard from "../../components/certificadoCard";
 
 export default function Certificados() {
@@ -46,13 +47,8 @@ export default function Certificados() {
         );
 
   return (
-    <div className="py-32 bg-slate-100 min-h-screen flex flex-col items-center gap-10">
-      <div className="text-center animate-fade-in-up">
-        <h1 className="text-3xl font-semibold mb-3">Certificados</h1>
-        <h2 className="text-lg text-slate-500">
-          Minha jornada de aprendizado contínuo
-        </h2>
-      </div>
+    <div className="client-page">
+      <Titulo titulo="Certificados" subtitulo="Minha jornada de aprendizado contínuo"/>
       <Filtro
         options={skills}
         selectedOption={filtroAtivo}

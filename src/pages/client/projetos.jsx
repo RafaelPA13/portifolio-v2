@@ -1,3 +1,4 @@
+import Titulo from "../../components/titulo";
 import Filtro from "../../components/filtro";
 import ProjetosCard from "../../components/projetosCard";
 
@@ -47,13 +48,8 @@ export default function Projetos() {
   const projetosFiltrados = filtroAtivo === "Todos" ? projetos : projetos.filter(projeto => projeto.tecnologias.some(tech => tech.nome === filtroAtivo));
 
   return (
-    <div className="py-32 bg-slate-100 min-h-screen flex flex-col items-center gap-10">
-      <div className="text-center animate-fade-in-up">
-        <h1 className="text-3xl font-semibold mb-3">Projetos</h1>
-        <h2 className="text-lg text-slate-500">
-          Conheça alguns dos meus trabalhos
-        </h2>
-      </div>
+    <div className="client-page">
+      <Titulo titulo="Projetos" subtitulo="Conheça alguns dos meus trabalhos"/>
       <Filtro options={skills} selectedOption={filtroAtivo} onSelect={setFiltroAtivo} />
       <ul className="w-[90%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projetosFiltrados.map((projeto, index) => (

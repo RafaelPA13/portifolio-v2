@@ -2,18 +2,14 @@ import { IoMailOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { FiSend } from "react-icons/fi";
 
+import Titulo from "../../components/titulo";
 import Fields from "../../components/fields";
 import Buttons from "../../components/buttons"
 
 export default function Contato() {
   return (
-    <div className="py-32 bg-slate-100 min-h-screen flex flex-col items-center gap-10">
-      <div className="text-center animate-fade-in-up">
-        <h1 className="text-3xl font-semibold mb-3">Contato</h1>
-        <h2 className="text-lg text-slate-500 flex-wrap">
-          Entre em contato e vamos conversar!
-        </h2>
-      </div>
+    <div className="client-page">
+      <Titulo titulo="Contato" subtitulo="Entre em contato e vamos conversar!"/>
       <div className="flex flex-wrap items-baseline justify-between w-[80%] gap-6 md:w-[60%] ">
         <div className="flex flex-col gap-6">
           <span className="flex items-baseline gap-2">
