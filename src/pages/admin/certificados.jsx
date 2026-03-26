@@ -1,7 +1,9 @@
+import Titulo from "../../components/titulo";
+
 export default function CertificadosAdmin() {
     return (
-        <>
-            <h1>CertificadosAdmin</h1>
-        </>
+        <div className="admin-page">
+            <Titulo titulo="Certificados" admin={true} textoButton="Novo Certificado" />
+        </div>
     )
 }

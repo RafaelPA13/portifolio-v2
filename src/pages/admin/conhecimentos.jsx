@@ -1,7 +1,9 @@
+import Titulo from "../../components/titulo";
+
 export default function Conhecimentos() {
     return (
-        <>
-            <h1>Conhecimentos</h1>
-        </>
+        <div className="admin-page">
+            <Titulo titulo="Conhecimentos" admin={true} textoButton="Novo Conhecimento" />
+        </div>
     )
 }

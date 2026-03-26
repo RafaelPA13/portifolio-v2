@@ -1,7 +1,9 @@
+import Titulo from "../../components/titulo";
+
 export default function Experiencias() {
     return (
-        <>
-            <h1>Experiencias</h1>
-        </>
+        <div className="admin-page">
+            <Titulo titulo="Experiências" admin={true} textoButton="Nova Experiência" />
+        </div>
     )
 }

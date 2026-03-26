@@ -1,7 +1,9 @@
+import Titulo from "../../components/titulo";
+
 export default function ProjetosAdmin() {
-    return (
-        <>
-            <h1>ProjetosAdmin</h1>
-        </>
-    )
+  return (
+    <div className="admin-page">
+      <Titulo titulo="Projetos" admin={true} textoButton="Novo Projeto" />
+    </div>
+  );
 }

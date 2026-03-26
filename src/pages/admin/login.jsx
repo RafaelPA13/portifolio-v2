@@ -1,6 +1,7 @@
 import { FaCode } from "react-icons/fa6";
 import { GiPadlock } from "react-icons/gi";
 
+import Titulo from "../../components/titulo";
 import Fields from "../../components/fields";
 import Buttons from "../../components/buttons";
 
@@ -10,12 +11,7 @@ export default function Login() {
       <span className="text-3xl text-slate-50 bg-indigo-950 p-4 rounded-xl animate-fade-in-up">
         <FaCode />
       </span>
-      <div className="text-center animate-fade-in-up">
-        <h1 className="text-3xl font-semibold mb-3">Admin</h1>
-        <h2 className="text-lg text-slate-500">
-          Acesso Restrito
-        </h2>
-      </div>
+      <Titulo titulo="Admin" subtitulo="Acesso Restrito"/>
       <form className="bg-slate-50 border-1 border-slate-300 rounded-xl p-6 flex flex-col gap-4 animate-fade-in-up w-[75%] md:w-[35%]">
         <span className="flex flex-col gap-2">
           <label>E-mail</label>
