@@ -1,8 +1,21 @@
 import Titulo from "../../components/titulo";
 import DataTable from "../../components/datatable";
 import Skill from "../../components/skill";
+import ToastNotification from "../../components/toastNotification";
+
+import { useState } from "react";
 
 export default function ProjetosAdmin() {
+  const [toast, setToast] = useState(null)
+
+  function mostrarSucesso(msg) {
+    setToast({ mensagem: msg, danger: false });
+  }
+
+  function mostrarErro(msg) {
+    setToast({ mensagem: msg, danger: true });
+  }
+
   const colunas = [
     { key: "nome", label: "Título", mobile: true },
     { key: "tecnologias", label: "Tecnologias", mobile: false },
@@ -38,7 +51,10 @@ export default function ProjetosAdmin() {
   return (
     <div className="admin-page">
       <Titulo titulo="Projetos" admin={true} textoButton="Novo Projeto" />
-      <DataTable columns={colunas} data={projetos} renderCell={renderCell}/>
+      <DataTable columns={colunas} data={projetos} renderCell={renderCell} onEdit={() => mostrarSucesso("Projeto Adicionado.")} onDelete={() => mostrarErro("Erro ao Deletar")}/>
+      {toast && (
+        <ToastNotification mensagem={toast.mensagem} danger={toast.danger} onClose={() => setToast(null)} />
+      )}
     </div>
   );
 }
