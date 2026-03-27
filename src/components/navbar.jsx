@@ -48,7 +48,7 @@ export default function Navbar({ admin }) {
     { icon: <LiaCertificateSolid />, name: "Certificados", path: "/admin/certificados" },
     { icon: <FaRegFileAlt />, name: "Currículo", path: "/admin/curriculo" },
     { icon: <BsSuitcaseLg />, name: "Experiências", path: "/admin/experiencias" },
-    { icon: <MdOutlineMenuBook />, name: "Conhecimentos", path: "/admin/conhecimentos" },
+    { icon: <MdOutlineMenuBook />, name: "Tecnologias", path: "/admin/tecnologias" },
   ];
 
   const navLinks = admin ? adminLinks : clientLinks;

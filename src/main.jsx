@@ -16,7 +16,7 @@ import ProjetosAdmin from "./pages/admin/projetos";
 import CertificadosAdmin from "./pages/admin/certificados";
 import Curriculo from "./pages/admin/curriculo";
 import Experiencias from "./pages/admin/experiencias";
-import Conhecimentos from "./pages/admin/conhecimentos";
+import Tecnologias from "./pages/admin/tecnologias";
 
 // Rotas
 import ClientRoutes from "./routes/clientRoutes";
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {path: "certificados", element: <CertificadosAdmin />},
       {path: "curriculo", element: <Curriculo />},
       {path: "experiencias", element: <Experiencias />},
-      {path: "conhecimentos", element: <Conhecimentos />}
+      {path: "tecnologias", element: <Tecnologias />}
     ]
   }
 ])
