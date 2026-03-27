@@ -11,7 +11,7 @@ export default function CertificadoCard({ certificado, delay = 0 }) {
             to={certificado.link} 
             target="_blank"
             style={{ animationDelay: `${delay}ms`, animationFillMode: "backwards" }}
-            className="group rounded-lg bg-slate-50 border-1 border-slate-300 p-6 overflow-hidden flex flex-col gap-3 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up"
+            className="group rounded-lg bg-slate-50 border border-slate-300 p-6 overflow-hidden flex flex-col gap-3 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-fade-in-up"
         >
             <span className="w-12 h-12 rounded-lg flex items-center justify-center bg-amber-100 text-2xl text-amber-400">
                 <LiaCertificateSolid/>

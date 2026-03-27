@@ -27,7 +27,7 @@ export default function Contato() {
             </div>
           </span>
         </div>
-        <form style={{animationDelay: "300ms", animationFillMode: "backwards"}} className="bg-slate-50 p-6 border-1 border-slate-300 rounded-xl grid gap-5 grid-cols-1 w-full animate-fade-in-up md:grid-cols-2 md:w-[60%]">
+        <form style={{animationDelay: "300ms", animationFillMode: "backwards"}} className="bg-slate-50 p-6 border border-slate-300 rounded-xl grid gap-5 grid-cols-1 w-full animate-fade-in-up md:grid-cols-2 md:w-[60%]">
             <Fields className="md:col-span-1" type="text" placeholder="Seu Nome" />
             <Fields className="md:col-span-1" type="text" placeholder="Seu E-mail" />
             <Fields className="md:col-span-2" type="text" placeholder="Assunto" />

@@ -42,7 +42,7 @@
 
 @layer components {
   .client-page {
-    @apply py-28 bg-slate-100 min-h-screen flex items-center;
+    @apply py-28 bg-slate-100 min-h-screen flex flex-col items-center gap-10;
   }
 
   .admin-page{
