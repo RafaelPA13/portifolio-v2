@@ -32,9 +32,7 @@ export default function Contato() {
             <Fields className="md:col-span-1" type="text" placeholder="Seu E-mail" />
             <Fields className="md:col-span-2" type="text" placeholder="Assunto" />
             <Fields className="md:col-span-2" type="text" placeholder="Sua Mensagem" textarea={true}/>
-            <div>
-                <Buttons text={"Enviar Mensagem"} icon={<FiSend/>} />
-            </div>
+            <Buttons text={"Enviar Mensagem"} icon={<FiSend/>} className={"col-span-1"}/>
         </form>
       </div>
     </div>

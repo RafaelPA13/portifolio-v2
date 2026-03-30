@@ -1,7 +1,12 @@
 import Titulo from "../../components/titulo";
 import DataTable from "../../components/datatable";
+import Form from "../../components/form";
+
+import { useState } from "react";
 
 export default function Conhecimentos() {
+  const [formAberto, setFormAberto] = useState(false);
+
   const colunas = [
     { key: "id", label: "ID", mobile: false },
     { key: "nome", label: "Skill", mobile: true },
@@ -17,10 +22,18 @@ export default function Conhecimentos() {
       data_atualizacao: "2024-01-15",
     },
   ];
+
+  const fields = [
+    { type: "text", placeholder: "Tecnologia", className: "col-span-2" },
+  ];
+
   return (
     <div className="admin-page">
-      <Titulo titulo="Tecnologias" admin={true} textoButton="Nova Tecnologia" />
+      <Titulo titulo="Tecnologias" admin={true} textoButton="Nova Tecnologia" onClick={() => setFormAberto(true)} />
       <DataTable columns={colunas} data={conhecimentos} />
+      {formAberto && (
+        <Form titulo="Nova Tecnologia" fields={fields} onClose={() => setFormAberto(false)} />
+      )}
     </div>
   );
 }

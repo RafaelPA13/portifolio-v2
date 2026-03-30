@@ -1,12 +1,14 @@
 import Titulo from "../../components/titulo";
 import DataTable from "../../components/datatable";
 import Skill from "../../components/skill";
-import ToastNotification from "../../components/toastNotification";
+import ToastNotification from "../../components/toastNotification"
+import Form from "../../components/form";
 
 import { useState } from "react";
 
 export default function ProjetosAdmin() {
   const [toast, setToast] = useState(null)
+  const [formAberto, setFormAberto] = useState(false);
 
   function mostrarSucesso(msg) {
     setToast({ mensagem: msg, danger: false });
@@ -35,6 +37,15 @@ export default function ProjetosAdmin() {
     },
   ];
 
+  const fields = [
+    { type: "text", placeholder: "Título", className: "col-span-2" },
+    { type: "text", placeholder: "Resumo", className: "col-span-2" },
+    { type: "text", placeholder: "Descrição", textarea: true, className: "col-span-2" },
+    { type: "text", placeholder: "Tecnologias", className: "col-span-2" },
+    { type: "text", placeholder: "URL GitHub", className: "col-span-2" },
+    { type: "text", placeholder: "URL Live", className: "col-span-2" },
+  ];
+
   function renderCell(key, value, item) {
     if (key === "tecnologias") {
       return (
@@ -50,10 +61,13 @@ export default function ProjetosAdmin() {
 
   return (
     <div className="admin-page">
-      <Titulo titulo="Projetos" admin={true} textoButton="Novo Projeto" />
+      <Titulo titulo="Projetos" admin={true} textoButton="Novo Projeto" onClick={() => setFormAberto(true)} />
       <DataTable columns={colunas} data={projetos} renderCell={renderCell} onEdit={() => mostrarSucesso("Projeto Adicionado.")} onDelete={() => mostrarErro("Erro ao Deletar")}/>
       {toast && (
         <ToastNotification mensagem={toast.mensagem} danger={toast.danger} onClose={() => setToast(null)} />
+      )}
+      {formAberto && (
+        <Form titulo="Novo Projeto" fields={fields} onClose={() => setFormAberto(false)} />
       )}
     </div>
   );
