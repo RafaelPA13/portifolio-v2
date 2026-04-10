@@ -11,12 +11,14 @@ import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { removerToken } from "../services/authService";
 
 export default function Navbar({ admin }) {
   const [openMenu, setOpenMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   const ANIMATION_DURATION = 400;
 
@@ -35,6 +37,11 @@ export default function Navbar({ admin }) {
   const toggleMenu = () => {
     openMenu ? handleClose() : handleOpen();
   };
+
+  function handleLogout() {
+    removerToken();
+    navigate("/admin")
+  }
 
   const clientLinks = [
     { name: "Inicio", path: "/" },
@@ -74,7 +81,7 @@ export default function Navbar({ admin }) {
         </nav>
         <div className="hidden md:flex items-center">
           {admin ? (
-            <button className="flex items-center gap-1 p-2 rounded-md transition hover:bg-amber-400 hover:text-red-800">
+            <button onClick={handleLogout} className="flex items-center gap-1 p-2 rounded-md transition hover:bg-amber-400 hover:text-red-800">
               <RxExit /> Sair
             </button>
           ) : (
@@ -110,7 +117,7 @@ export default function Navbar({ admin }) {
           {admin ? (
             <button
               className="flex items-center gap-2 mt-3 p-2 rounded-md transition hover:bg-amber-400 hover:text-red-800 w-fit"
-              onClick={handleClose}
+              onClick={handleLogout}
             >
               <RxExit /> Sair
             </button>
