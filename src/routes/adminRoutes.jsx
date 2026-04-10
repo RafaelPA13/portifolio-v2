@@ -1,7 +1,12 @@
 import Navbar from "../components/navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
+import { estaAutenticado } from "../services/authService";
 
 export default function AdminRoutes() {
+  if (!estaAutenticado()) {
+    return <Navigate to="/admin" replace />;
+  }
+
   return (
     <>
       <Navbar admin={true} />
