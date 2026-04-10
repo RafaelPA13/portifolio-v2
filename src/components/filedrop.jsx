@@ -5,6 +5,7 @@ import { FaRegFileAlt } from "react-icons/fa";
 export default function FileDrop({
   accept = "image/*,application/pdf",
   onChange,
+  className
 }) {
   const inputRef = useRef(null);
   const [dragging, setDragging] = useState(false);
@@ -46,6 +47,7 @@ export default function FileDrop({
         py-10 px-6 rounded-lg cursor-pointer
         border-2 border-dashed transition-colors duration-200
         ${dragging ? "border-amber-400 bg-amber-50" : "border-slate-300 hover:border-amber-400 bg-slate-50"}
+        ${className}
       `}
     >
       <input

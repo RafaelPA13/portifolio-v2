@@ -1,4 +1,4 @@
-export default function Fields({ type, placeholder, textarea = false, className, value, onChange }) {
+export default function Fields({ type, placeholder, textarea = false, className, value, onChange, required = false }) {
   return (
     <>
       {textarea ? (
@@ -15,6 +15,7 @@ export default function Fields({ type, placeholder, textarea = false, className,
           value={value}
           onChange={onChange}
           className={`bg-slate-100 px-3 py-2 border border-slate-300 rounded-lg ${className}`}
+          required={required}
         />
       )}
     </>
