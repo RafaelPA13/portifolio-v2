@@ -35,7 +35,7 @@ export default function ExperienciasCard({ experiencia }) {
       </h4>
       <p className="text-base text-slate-500">{experiencia.descricao}</p>
       <ul className="flex flex-wrap gap-3">
-        {experiencia.tecnologias?.map((tecnologia, index) => (
+        {experiencia.tecnologias?.map((tecnologia) => (
           <Skill
             key={tecnologia.id}
             skill={tecnologia.skill}

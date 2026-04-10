@@ -15,8 +15,8 @@ export default function ProjetosCard({ projeto, delay = 0 }) {
                 <h3 className="font-semibold text-indigo-950 transition-colors group-hover:text-amber-400">{projeto.nome}</h3>
                 <p className="text-slate-500 text-sm">{projeto.resumo}</p>
                 <ul className="flex items-center gap-2 flex-wrap">
-                    {projeto.tecnologias.map((tecnologia) => (
-                        <Skill key={tecnologia.id} skill={tecnologia.nome} inicio={false} card={true} animated={false} />
+                    {projeto.tecnologias?.map((tecnologia) => (
+                        <Skill key={tecnologia.id} skill={tecnologia.skill} inicio={false} card={true} animated={false} />
                     ))}
                 </ul>
             </div>

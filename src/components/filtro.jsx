@@ -7,12 +7,12 @@ export default function Filtro({ options, selectedOption, onSelect }) {
       >
         Todos
       </li>
-      {options.map((option, index) => (
+      {options.tecnologias?.map((tech, index) => (
         <li 
             key={index} 
-            className={`py-2 px-3 rounded-full hover:cursor-pointer transition-colors ${selectedOption === option ? "bg-amber-400 text-indigo-950" : "bg-slate-200 text-indigo-950 hover:bg-indigo-950 hover:text-slate-50"}`}
-            onClick={() => onSelect(option)}>
-            {option}
+            className={`py-2 px-3 rounded-full hover:cursor-pointer transition-colors ${selectedOption === tech.skill ? "bg-amber-400 text-indigo-950" : "bg-slate-200 text-indigo-950 hover:bg-indigo-950 hover:text-slate-50"}`}
+            onClick={() => onSelect(tech.skill)}>
+            {tech.skill}
         </li>
       ))}
     </ul>

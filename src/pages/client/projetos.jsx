@@ -2,50 +2,30 @@ import Titulo from "../../components/titulo";
 import Filtro from "../../components/filtro";
 import ProjetosCard from "../../components/projetosCard";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getTecnologias } from "../../services/tecnologiasService";
+import { getProjetos } from "../../services/projtetosService";
 
 export default function Projetos() {
-  const skills = ["Python", "Java", "TypeScript", "JavaScript", "React", "Node.js", "Flask", "Spring Boot", "PostgreSQL", "MongoDB", "HTML/CSS", "Tailwind CSS", "IA"];
+  const [skills, setSkills] = useState([]);
+  const [projetos, setProjetos] = useState([]);
   const [filtroAtivo, setFiltroAtivo] = useState("Todos");
-  const projetos = [
-    {
-      id: 1,
-      nome: "Sistema de Gestão Empresarial",
-      resumo: "Sistema completo para gestão de empresas com dashboard interativo.",
-      imagem: null,
-      tecnologias: [
-        { id: 1, nome: "React" },
-        { id: 2, nome: "TypeScript" },
-        { id: 3, nome: "Node.js" },
-        { id: 4, nome: "PostgreSQL" },
-      ]
-    },
-    {
-      id: 2,
-      nome: "App de Delivery",
-      resumo: "Aplicativo de delivery com rastreamento em tempo real.",
-      imagem: null,
-      tecnologias: [
-        { id: 1, nome: "React" },
-        { id: 5, nome: "Python" },
-        { id: 6, nome: "Flask" },
-        { id: 7, nome: "MongoDB" },
-      ]
-    },
-    {
-      id: 3,
-      nome: "Chatbot com IA",
-      resumo: "Chatbot inteligente usando processamento de linguagem natural.",
-      imagem: null,
-      tecnologias: [
-        { id: 5, nome: "Python" },
-        { id: 8, nome: "IA" },
-        { id: 9, nome: "NLP" },
-        { id: 10, nome: "FastAPI" },
-      ]
-    },
-  ];
-  const projetosFiltrados = filtroAtivo === "Todos" ? projetos : projetos.filter(projeto => projeto.tecnologias.some(tech => tech.nome === filtroAtivo));
+  const projetosFiltrados = filtroAtivo === "Todos" ? projetos : projetos.filter(projeto => projeto.tecnologias?.some(tech => tech.skill === filtroAtivo));
+
+  async function carregarTecnologias() {
+    const data = await getTecnologias();
+    setSkills(data);
+  }
+
+  async function carregarProjetos() {
+    const data = await getProjetos();
+    setProjetos(data);
+  }
+
+  useEffect(() => {
+    carregarTecnologias();
+    carregarProjetos();
+  }, []);
 
   return (
     <div className="client-page">

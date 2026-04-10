@@ -78,7 +78,7 @@ export default function Inicio() {
           <img
             src="/Rafael.jpeg"
             alt="Rafael Porto Annunciato"
-            className="size-48 sm:size-64 md:size-96 rounded-full border-4 border-amber-400"
+            className="size-48 sm:size-64 md:size-96 w-full h-full object-cover rounded-full border-4 border-amber-400"
           />
         </div>
       </section>
