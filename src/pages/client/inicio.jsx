@@ -7,33 +7,48 @@ import Links from "../../components/links";
 import Skill from "../../components/skill";
 import ExperienciasCard from "../../components/experienciasCard";
 
+import { useEffect, useState } from "react";
 import useInView from "../../hooks/useInView";
+import { downloadCurriculo } from "../../services/curriculoService";
+import { getTecnologias } from "../../services/tecnologiasService";
+import { getExperiencias } from "../../services/experienciasService";
 
 export default function Inicio() {
+  const [skills, setSkills] = useState([]);
+  const [experiencias, setExperiencias] = useState([]);
   const { ref: refConhecimentos, inView: inViewConhecimentos } = useInView();
   const { ref: refExperiencias, inView: inViewExperiencias } = useInView();
 
-  const skills = ["Python", "Java", "TypeScript", "JavaScript", "React", "Node.js", "Flask", "Spring Boot", "PostgreSQL", "MongoDB", "Docker", "Git", "HTML/CSS", "Tailwind CSS", "Rest APIs", "IA/ML"];
-  const experiencias = [
-    {
-      data_inicio: "2025-03-14",
-      data_fim: null,
-      emprego_atual: true,
-      cargo: "Desenvolvedor Full Stack",
-      empresa: "Tech Solutions LTDA",
-      descricao: "Atuação em projetos de desenvolvimento de software, com foco em tecnologias web e mobile. Participação em reuniões de equipe e colaboração com outros departamentos para garantir a entrega de soluções de alta qualidade.",
-      tecnologias: ["React", "Node.js", "TypeScript", "PostgreSQL"]
-    },
-    {
-      data_inicio: "2025-03-06",
-      data_fim: "2026-03-17",
-      emprego_atual: false,
-      cargo: "Estagiário de Desenvolvimento de Software",
-      empresa: "AIDDA Technology Group",
-      descricao: "Atuação em projetos de desenvolvimento de software, com foco em tecnologias web e mobile. Participação em reuniões de equipe e colaboração com outros departamentos para garantir a entrega de soluções de alta qualidade.",
-      tecnologias: ["Python", "Flask", "SQL", "Angular"]
+  async function handleDownloadCurriculo() {
+    try {
+      const blob = await downloadCurriculo();
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "Rafael_Porto_Annunciato_Curriculo.pdf");
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+    } catch (err) {
+      console.error("Erro ao baixar currículo:", err);
+      alert("Erro ao baixar currículo. Por favor, tente novamente mais tarde.");
     }
-  ];
+  }
+
+  async function carregarTecnologias() {
+    const data = await getTecnologias();
+    setSkills(data);
+  }
+
+  async function carregarExperiencias() {
+    const data = await getExperiencias();
+    setExperiencias(data);
+  }
+
+  useEffect(() => {
+    carregarTecnologias();
+    carregarExperiencias();
+  }, []);
 
   return (
     <>
@@ -55,7 +70,7 @@ export default function Inicio() {
             busca de novos desafios e oportunidades de aprendizado.
           </p>
           <span className="flex items-center gap-4">
-            <Buttons text="Baixar Currículo" icon={<MdOutlineFileDownload />} />
+            <Buttons text="Baixar Currículo" icon={<MdOutlineFileDownload />} onClick={handleDownloadCurriculo}/>
             <Links text="Ver Projetos" icon={<IoIosArrowRoundForward />} to="/projetos" />
           </span>
         </div>
@@ -71,7 +86,7 @@ export default function Inicio() {
         <h2 ref={refConhecimentos} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewConhecimentos ? "animate-fade-in-up" : "opacity-0"}`}>Conhecimentos</h2>
         <ul className="w-[75%] flex justify-center flex-wrap gap-4 md:w-[50%]">
           {skills.map((skill, index) => (
-            <Skill key={index} skill={skill} delay={index * 50} />
+            <Skill key={skill.id} skill={skill.skill} delay={index * 50} />
           ))}
         </ul>
       </section>
