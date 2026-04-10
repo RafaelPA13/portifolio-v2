@@ -249,7 +249,7 @@ export default function ProjetosAdmin() {
             value={form.nome}
             onChange={(e) => setCampo("nome", e.target.value)}
             className={"col-span-2"}
-            required={true}
+            required
           />
           <Fields
             type="text"
@@ -257,7 +257,7 @@ export default function ProjetosAdmin() {
             value={form.resumo}
             onChange={(e) => setCampo("resumo", e.target.value)}
             className={"col-span-2"}
-            required={true}
+            required
           />
           <Fields
             textarea
@@ -265,7 +265,7 @@ export default function ProjetosAdmin() {
             value={form.descricao}
             onChange={(e) => setCampo("descricao", e.target.value)}
             className={"col-span-2"}
-            required={true}
+            required
           />
           <Fields
             type="text"
@@ -273,7 +273,7 @@ export default function ProjetosAdmin() {
             value={form.tecnologias}
             onChange={(e) => setCampo("tecnologias", e.target.value)}
             className={"col-span-2"}
-            required={true}
+            required
           />
           <Fields
             type="text"

@@ -194,7 +194,7 @@ export default function CertificadosAdmin() {
             value={form.nome}
             onChange={(e) => setCampo("nome", e.target.value)}
             className="col-span-2"
-            required={true}
+            required
           />
 
           {/* Instituição  */}
@@ -204,7 +204,7 @@ export default function CertificadosAdmin() {
             value={form.instituicao}
             onChange={(e) => setCampo("instituicao", e.target.value)}
             className="col-span-2"
-            required={true}
+            required
           />
 
           {/* Carga horária */}
@@ -223,7 +223,7 @@ export default function CertificadosAdmin() {
             value={form.link}
             onChange={(e) => setCampo("link", e.target.value)}
             className="col-span-2"
-            required={true}
+            required
           />
 
           {/* Data de conclusão */}
@@ -233,7 +233,7 @@ export default function CertificadosAdmin() {
             value={form.dt_conclusao}
             onChange={(e) => setCampo("dt_conclusao", e.target.value)}
             className="col-span-2"
-            required={true}
+            required
           />
 
           {/* Tecnologias */}
@@ -243,7 +243,7 @@ export default function CertificadosAdmin() {
             value={form.tecnologias}
             onChange={(e) => setCampo("tecnologias", e.target.value)}
             className="col-span-2"
-            required={true}
+            required
           />
         </Form>
       )}
