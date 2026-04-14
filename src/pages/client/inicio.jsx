@@ -20,19 +20,14 @@ export default function Inicio() {
   const { ref: refExperiencias, inView: inViewExperiencias } = useInView();
 
   async function handleDownloadCurriculo() {
-    try {
-      const blob = await downloadCurriculo();
-      const url = window.URL.createObjectURL(new Blob([blob]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", "Rafael_Porto_Annunciato_Curriculo.pdf");
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode.removeChild(link);
-    } catch (err) {
-      console.error("Erro ao baixar currículo:", err);
-      alert("Erro ao baixar currículo. Por favor, tente novamente mais tarde.");
-    }
+    const url =
+      "https://portifolio-v2-api-production.up.railway.app/curriculo/download";
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "Rafael_Porto_Annunciato_Curriculo.pdf");
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 
   async function carregarTecnologias() {
@@ -70,8 +65,16 @@ export default function Inicio() {
             busca de novos desafios e oportunidades de aprendizado.
           </p>
           <span className="flex items-center gap-4">
-            <Buttons text="Baixar Currículo" icon={<MdOutlineFileDownload />} onClick={handleDownloadCurriculo}/>
-            <Links text="Ver Projetos" icon={<IoIosArrowRoundForward />} to="/projetos" />
+            <Buttons
+              text="Baixar Currículo"
+              icon={<MdOutlineFileDownload />}
+              onClick={handleDownloadCurriculo}
+            />
+            <Links
+              text="Ver Projetos"
+              icon={<IoIosArrowRoundForward />}
+              to="/projetos"
+            />
           </span>
         </div>
         <div className="w-full flex justify-center animate-zoom-in">
@@ -83,7 +86,13 @@ export default function Inicio() {
         </div>
       </section>
       <section className="bg-slate-50 flex flex-col items-center justify-center gap-10 py-16">
-        <h2 ref={refConhecimentos} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewConhecimentos ? "animate-fade-in-up" : "opacity-0"}`}>Conhecimentos</h2>
+        <h2
+          ref={refConhecimentos}
+          style={{ animationFillMode: "backwards" }}
+          className={`text-3xl font-semibold ${inViewConhecimentos ? "animate-fade-in-up" : "opacity-0"}`}
+        >
+          Conhecimentos
+        </h2>
         <ul className="w-[75%] flex justify-center flex-wrap gap-4 md:w-[50%]">
           {skills.map((skill, index) => (
             <Skill key={skill.id} skill={skill.skill} delay={index * 50} />
@@ -91,7 +100,13 @@ export default function Inicio() {
         </ul>
       </section>
       <section className="bg-slate-100 flex flex-col items-center justify-center gap-10 py-16">
-        <h2 ref={refExperiencias} style={{animationFillMode: "backwards"}} className={`text-3xl font-semibold ${inViewExperiencias ? "animate-fade-in-up" : "opacity-0"}`}>Experiências</h2>
+        <h2
+          ref={refExperiencias}
+          style={{ animationFillMode: "backwards" }}
+          className={`text-3xl font-semibold ${inViewExperiencias ? "animate-fade-in-up" : "opacity-0"}`}
+        >
+          Experiências
+        </h2>
         <ul className="flex flex-col gap-8 w-[75%] md:w-[50%]">
           {experiencias.map((experiencia, index) => (
             <ExperienciasCard key={index} experiencia={experiencia} />
